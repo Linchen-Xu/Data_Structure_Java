@@ -11,6 +11,16 @@
 //	
 //}
 
+/**
+ * 
+ * @author xlc
+ *
+ * @param OrderedSeqList
+ * 
+ * contains lower_bound and upper_bound
+ * 
+ */
+
 public class OrderedSeqList<Type extends Comparable<Type>>{
 	private static final int DEFAULT_CAPACITY = 10;
 	private Type[] elements;
