@@ -1,7 +1,7 @@
 
-@SuppressWarnings("unused")
 public class AdjacencyList {
 	private class Node{
+		@SuppressWarnings("unused")
 		public int to, w, next;
 	}
 	private Node[] mp;

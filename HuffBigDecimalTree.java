@@ -21,6 +21,9 @@ public class HuffBigDecimalTree{
 			else if(res == 0) return 0;
 			else return -1;
 		}
+		public String toString(){
+			return data.toString();
+		}
 	}
 	
 	private PQueue<Node<BigDecimal>> pq;
@@ -33,6 +36,10 @@ public class HuffBigDecimalTree{
 	public void add(BigDecimal a){
 		data = new Node<BigDecimal>(a);
 		pq.insert(data);
+		return;
+	}
+	
+	public void Prim(){
 		while(pq.size() > 1){
 			data = pq.delete();
 			data1 = pq.delete();
@@ -41,4 +48,11 @@ public class HuffBigDecimalTree{
 		return;
 	}
 	
+	public int size(){
+		return pq.size();
+	}
+	
+	public String toString(){
+		return pq.top().toString();
+	}
 }

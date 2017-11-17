@@ -19,6 +19,9 @@ public class HuffDoubleTree {
 			else if(res == 0) return 0;
 			else return -1;
 		}
+		public String toString(){
+			return data.toString();
+		}
 	}
 	
 	private PQueue<Node<Double>> pq;
@@ -31,12 +34,23 @@ public class HuffDoubleTree {
 	public void add(Double a){
 		data = new Node<Double>(a);
 		pq.insert(data);
+		return;
+	}
+	public void Prim(){
 		while(pq.size() > 1){
 			data = pq.delete();
 			data1 = pq.delete();
 			pq.insert(new Node<Double>(data.data + data1.data,data,data1));
-		}
+		}		
 		return;
+	}
+	
+	public int size(){
+		return pq.size();
+	}
+	
+	public String toString(){
+		return pq.top().toString();
 	}
 	
 }

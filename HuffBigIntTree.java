@@ -21,6 +21,9 @@ public class HuffBigIntTree{
 			else if(res == 0) return 0;
 			else return -1;
 		}
+		public String toString(){
+			return data.toString();
+		}
 	}
 	
 	private PQueue<Node<BigInteger>> pq;
@@ -33,12 +36,22 @@ public class HuffBigIntTree{
 	public void add(BigInteger a){
 		data = new Node<BigInteger>(a);
 		pq.insert(data);
+		return;
+	}
+	public void Prim(){
 		while(pq.size() > 1){
 			data = pq.delete();
 			data1 = pq.delete();
 			pq.insert(new Node<BigInteger>(data.data.add(data1.data),data,data1));
 		}
 		return;
+	}	
+	
+	public int size(){
+		return pq.size();
 	}
 	
+	public String toString(){
+		return pq.top().toString();
+	}
 }

@@ -20,6 +20,9 @@ public class HuffIntTree {
 			else if(res == 0) return 0;
 			else return -1;
 		}
+		public String toString(){
+			return data.toString();
+		}
 	}
 	
 	private PQueue<Node<Integer>> pq;
@@ -32,12 +35,25 @@ public class HuffIntTree {
 	public void add(Integer a){
 		data = new Node<Integer>(a);
 		pq.insert(data);
+		return;
+	}
+	
+	public void Prim(){
 		while(pq.size() > 1){
 			data = pq.delete();
 			data1 = pq.delete();
 			pq.insert(new Node<Integer>(data.data + data1.data,data,data1));
 		}
+		//System.out.println(pq.top().toString());
 		return;
+	}
+	
+	public int size(){
+		return pq.size();
+	}
+	
+	public String toString(){
+		return pq.top().toString();
 	}
 	
 }

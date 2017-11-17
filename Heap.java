@@ -53,9 +53,6 @@ public class Heap<T extends Comparable<T>>{
 		--currentsize;
 	}
 	public int size(){
-		return _size;
-	}
-	public int numofelements(){
 		return currentsize;
 	}
 	public boolean empty(){
@@ -74,11 +71,6 @@ public class Heap<T extends Comparable<T>>{
 	}
 	public void insert(T data){
 		if(full())
-			return;
-		/*
-		 * resize
-		 */
-		if(currentsize + 1 == _size)
 			expandcapacity(_size*2+1);
 		/*
 		 * filter up
